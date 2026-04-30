@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me - Moch Nazwar</title>
-    <meta name="description" content="Portfolio pribadi Moch Nazwar - Linux enthusiast, web dev, dan automation. Kunjungi untuk info latar belakang, pendidikan, dan kontak.">
+    <title>About Me</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,11 +20,9 @@
                 <a href="#" class="logo">
                     <i class="fas fa-user-astronaut"></i>Nazwar
                 </a>
-                <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#whoami">Who am I</a></li>
                     <li><a href="#education">Education</a></li>
@@ -114,7 +111,6 @@
         <p>Penggunaan sistem operasi Linux untuk pengembangan dan pembelajaran.</p>
     </div>
 
-    
     <div class="skill-card">
         <i class="fab fa-github"></i>
         <h3>GitHub</h3>
@@ -142,10 +138,10 @@
             <h2>Contact Me</h2>
 
             <div class="social-links">
-                <a href="https://github.com/xzn-wer" class="social-link" target="_blank">
+                <a href="https://github.com/xzn-wer" class="social-link" target="_blank" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://wa.me/6285117229830" class="social-link" target="_blank">
+                <a href="https://wa.me/6285117229830" class="social-link" target="_blank" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
@@ -160,4 +156,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
