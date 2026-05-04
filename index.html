@@ -6,7 +6,7 @@
     <meta name="description" content="Personal portfolio of Moch Nazwar — Linux enthusiast, web developer, and open-source lover.">
     <meta name="author" content="Moch Nazwar">
     <title>Moch Nazwar — About Me</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%238a2be2'/%3E%3Cstop offset='100%25' stop-color='%2320b2aa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='16' font-family='Arial' fill='white' font-weight='bold'%3EN%3C/text%3E%3C/svg%3E">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="loader-bar-track">
+                <div class="loader-bar"></div>
+            </div>
+            <p class="loader-text">Initializing...</p>
+        </div>
+    </div>
 
     <!-- Header -->
     <header id="header">
@@ -71,7 +84,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="date">2023 - now</span>
+                        <span class="date">2023 - 2026</span>
                         <h3>SMAN 3 GARUT</h3>
                         <p>Jurusan IPA</p>
                         <p>Currently attending high school at SMAN 3 Garut.</p>
@@ -103,40 +116,100 @@
         <div class="container">
             <h2 class="section-title">Skills & Interests</h2>
             <div class="skills-container">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>Web Basic</h3>
-                    <p>HTML, CSS, dan JavaScript. Membangun aplikasi web dasar dan responsif.</p>
+                <div class="skill-card" style="--delay: 0s">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="skill-icon-wrap">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <h3>Web Basic</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Web Basic</h3>
+                            <p>HTML, CSS, dan JavaScript. Membangun aplikasi web dasar dan responsif.</p>
+                            <div class="skill-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                    <p>Pengembangan aplikasi dan skrip menggunakan Python.</p>
+                <div class="skill-card" style="--delay: 0.1s">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="skill-icon-wrap">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h3>Python</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Python</h3>
+                            <p>Pengembangan aplikasi dan skrip menggunakan Python.</p>
+                            <div class="skill-tags"><span>Scripting</span><span>Automation</span></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <i class="fab fa-linux"></i>
-                    <h3>Linux</h3>
-                    <p>Penggunaan sistem operasi Linux untuk pengembangan dan pembelajaran.</p>
+                <div class="skill-card" style="--delay: 0.2s">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="skill-icon-wrap">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <h3>Linux</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Linux</h3>
+                            <p>Penggunaan sistem operasi Linux untuk pengembangan dan pembelajaran.</p>
+                            <div class="skill-tags"><span>Arch</span><span>Ubuntu</span><span>ZSH</span></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <i class="fab fa-github"></i>
-                    <h3>GitHub</h3>
-                    <p>Pengelolaan proyek dan kolaborasi menggunakan GitHub.</p>
+                <div class="skill-card" style="--delay: 0.3s">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="skill-icon-wrap">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GitHub</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>GitHub</h3>
+                            <p>Pengelolaan proyek dan kolaborasi menggunakan GitHub.</p>
+                            <div class="skill-tags"><span>Git</span><span>Open Source</span></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <i class="fas fa-terminal"></i>
-                    <h3>CLI</h3>
-                    <p>Penggunaan Command Line Interface untuk navigasi dan pengelolaan sistem.</p>
+                <div class="skill-card" style="--delay: 0.4s">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="skill-icon-wrap">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h3>CLI</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>CLI</h3>
+                            <p>Penggunaan Command Line Interface untuk navigasi dan pengelolaan sistem.</p>
+                            <div class="skill-tags"><span>Bash</span><span>ZSH</span><span>Fish</span></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <i class="fab fa-visual-studio-code"></i>
-                    <h3>VSCode</h3>
-                    <p>Penggunaan Visual Studio Code sebagai editor untuk pengembangan proyek.</p>
+                <div class="skill-card" style="--delay: 0.5s">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <div class="skill-icon-wrap">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <h3>VSCode</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>VSCode</h3>
+                            <p>Penggunaan Visual Studio Code sebagai editor untuk pengembangan proyek.</p>
+                            <div class="skill-tags"><span>Extensions</span><span>Themes</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
