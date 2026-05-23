@@ -122,30 +122,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const terminalCommand = document.getElementById('terminal-command');
     const systemOutput = document.getElementById('system-output');
     const skillTitle = document.getElementById('skill-title');
-    const skillProgressFill = document.getElementById('skill-progress-fill');
-    const skillProgressPercent = document.getElementById('skill-progress-percent');
     const skillDescription = document.getElementById('skill-description');
     const skillTags = document.getElementById('skill-tags');
     const consoleOutput = document.getElementById('terminal-console-output');
     const outputContainer = document.getElementById('terminal-output-container');
 
     let typingInterval = null;
-    let countInterval = null;
     let transitionTimeout = null;
 
     function switchSkill(skillKey) {
         // Clear any ongoing animations
         clearInterval(typingInterval);
-        clearInterval(countInterval);
         clearTimeout(transitionTimeout);
 
         const data = SKILLS_DATA[skillKey];
         if (!data) return;
 
-        // Reset output container visibility and progress bar
+        // Reset output container visibility
         if (outputContainer) outputContainer.classList.add('faded-out');
-        if (skillProgressFill) skillProgressFill.style.width = '0%';
-        if (skillProgressPercent) skillProgressPercent.textContent = '0%';
 
         // Start command line typing simulation
         if (terminalCommand) {
@@ -185,30 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             data.consoleOutput.forEach(line => {
                                 consoleOutput.innerHTML += line;
                             });
-                        }
-
-                        // Animate Progress Bar
-                        if (skillProgressFill) {
-                            setTimeout(() => {
-                                skillProgressFill.style.width = `${data.progress}%`;
-                            }, 50);
-                        }
-
-                        // Increment Percent Text
-                        if (skillProgressPercent) {
-                            let currentPercent = 0;
-                            const targetPercent = data.progress;
-                            const duration = 750; // ms
-                            const stepTime = Math.max(Math.floor(duration / targetPercent), 10);
-                            
-                            countInterval = setInterval(() => {
-                                if (currentPercent < targetPercent) {
-                                    currentPercent++;
-                                    skillProgressPercent.textContent = `${currentPercent}%`;
-                                } else {
-                                    clearInterval(countInterval);
-                                }
-                            }, stepTime);
                         }
                     }, 250);
                 }
