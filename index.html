@@ -115,99 +115,116 @@
     <section id="skills">
         <div class="container">
             <h2 class="section-title">Skills & Interests</h2>
-            <div class="skills-container">
-                <div class="skill-card" style="--delay: 0s">
-                    <div class="skill-card-inner">
-                        <div class="skill-card-front">
-                            <div class="skill-icon-wrap">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <h3>Web Basic</h3>
+            
+            <div class="skills-dashboard-wrapper">
+                <!-- Panel Kiri: Selector -->
+                <div class="skills-selector">
+                    <button class="skill-btn active" data-skill="linux">
+                        <div class="skill-btn-icon"><i class="fab fa-linux"></i></div>
+                        <div class="skill-btn-info">
+                            <h4>Linux</h4>
+                            <span>OS & Scripting</span>
                         </div>
-                        <div class="skill-card-back">
-                            <h3>Web Basic</h3>
-                            <p>HTML, CSS, dan JavaScript. Membangun aplikasi web dasar dan responsif.</p>
-                            <div class="skill-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                        <i class="fas fa-chevron-right arrow-indicator"></i>
+                    </button>
+                    
+                    <button class="skill-btn" data-skill="web-basic">
+                        <div class="skill-btn-icon"><i class="fab fa-html5"></i></div>
+                        <div class="skill-btn-info">
+                            <h4>Web Basic</h4>
+                            <span>Frontend Tech</span>
                         </div>
-                    </div>
+                        <i class="fas fa-chevron-right arrow-indicator"></i>
+                    </button>
+                    
+                    <button class="skill-btn" data-skill="python">
+                        <div class="skill-btn-icon"><i class="fab fa-python"></i></div>
+                        <div class="skill-btn-info">
+                            <h4>Python</h4>
+                            <span>Automation / Dev</span>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-indicator"></i>
+                    </button>
+                    
+                    <button class="skill-btn" data-skill="github">
+                        <div class="skill-btn-icon"><i class="fab fa-github"></i></div>
+                        <div class="skill-btn-info">
+                            <h4>GitHub</h4>
+                            <span>Version Control</span>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-indicator"></i>
+                    </button>
+                    
+                    <button class="skill-btn" data-skill="cli">
+                        <div class="skill-btn-icon"><i class="fas fa-terminal"></i></div>
+                        <div class="skill-btn-info">
+                            <h4>CLI & Shell</h4>
+                            <span>Command Line</span>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-indicator"></i>
+                    </button>
+                    
+                    <button class="skill-btn" data-skill="vscode">
+                        <div class="skill-btn-icon"><i class="fab fa-microsoft"></i></div>
+                        <div class="skill-btn-info">
+                            <h4>VSCode</h4>
+                            <span>Dev Environment</span>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-indicator"></i>
+                    </button>
                 </div>
 
-                <div class="skill-card" style="--delay: 0.1s">
-                    <div class="skill-card-inner">
-                        <div class="skill-card-front">
-                            <div class="skill-icon-wrap">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <h3>Python</h3>
+                <!-- Panel Kanan: Mock Terminal -->
+                <div class="skills-terminal-panel">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot dot-close"></span>
+                            <span class="dot dot-minimize"></span>
+                            <span class="dot dot-maximize"></span>
                         </div>
-                        <div class="skill-card-back">
-                            <h3>Python</h3>
-                            <p>Pengembangan aplikasi dan skrip menggunakan Python.</p>
-                            <div class="skill-tags"><span>Scripting</span><span>Automation</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" style="--delay: 0.2s">
-                    <div class="skill-card-inner">
-                        <div class="skill-card-front">
-                            <div class="skill-icon-wrap">
-                                <i class="fab fa-linux"></i>
-                            </div>
-                            <h3>Linux</h3>
-                        </div>
-                        <div class="skill-card-back">
-                            <h3>Linux</h3>
-                            <p>Penggunaan sistem operasi Linux untuk pengembangan dan pembelajaran.</p>
-                            <div class="skill-tags"><span>Arch</span><span>Ubuntu</span><span>ZSH</span></div>
+                        <div class="terminal-title">nazwar@archlinux: ~/skills</div>
+                        <div class="terminal-status">
+                            <span class="pulse-indicator"></span> online
                         </div>
                     </div>
-                </div>
+                    <div class="terminal-body">
+                        <!-- CLI Command Prompt Row -->
+                        <div class="terminal-prompt-line">
+                            <span class="prompt-user">nazwar@archlinux</span>:<span class="prompt-path">~/skills</span>$ <span class="prompt-command" id="terminal-command">neofetch --distro "Arch Linux"</span><span class="terminal-cursor"></span>
+                        </div>
 
-                <div class="skill-card" style="--delay: 0.3s">
-                    <div class="skill-card-inner">
-                        <div class="skill-card-front">
-                            <div class="skill-icon-wrap">
-                                <i class="fab fa-github"></i>
+                        <!-- Terminal Dynamic Output Block -->
+                        <div class="terminal-output-container" id="terminal-output-container">
+                            <div class="system-output" id="system-output">[SYSTEM] Loading skill profile: Linux... OK</div>
+                            
+                            <div class="terminal-main-content">
+                                <h3 id="skill-title">Linux</h3>
+                                
+                                <div class="skill-progress-wrap">
+                                    <span class="progress-label">Expertise Level:</span>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" id="skill-progress-fill" style="width: 90%;"></div>
+                                    </div>
+                                    <span class="progress-percent" id="skill-progress-percent">90%</span>
+                                </div>
+                                
+                                <p id="skill-description">Penggunaan sistem operasi Linux sebagai sistem utama sehari-hari. Terbiasa mengelola repositori, konfigurasi dotfiles, optimasi kinerja, serta manajemen sistem modular.</p>
+                                
+                                <div class="skill-tags" id="skill-tags">
+                                    <span>Arch Linux</span>
+                                    <span>Ubuntu</span>
+                                    <span>ZSH</span>
+                                    <span>System Admin</span>
+                                </div>
                             </div>
-                            <h3>GitHub</h3>
-                        </div>
-                        <div class="skill-card-back">
-                            <h3>GitHub</h3>
-                            <p>Pengelolaan proyek dan kolaborasi menggunakan GitHub.</p>
-                            <div class="skill-tags"><span>Git</span><span>Open Source</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" style="--delay: 0.4s">
-                    <div class="skill-card-inner">
-                        <div class="skill-card-front">
-                            <div class="skill-icon-wrap">
-                                <i class="fas fa-terminal"></i>
+                            
+                            <!-- Simulated Terminal Command Return -->
+                            <div class="terminal-console-output" id="terminal-console-output">
+                                <span class="console-line text-cyan">OS: Arch Linux x86_64</span>
+                                <span class="console-line text-cyan">Shell: zsh 5.9</span>
+                                <span class="console-line text-cyan">WM: Hyprland (Wayland)</span>
+                                <span class="console-line text-green">[OK] All configurations loaded. Enjoy scripting!</span>
                             </div>
-                            <h3>CLI</h3>
-                        </div>
-                        <div class="skill-card-back">
-                            <h3>CLI</h3>
-                            <p>Penggunaan Command Line Interface untuk navigasi dan pengelolaan sistem.</p>
-                            <div class="skill-tags"><span>Bash</span><span>ZSH</span><span>Fish</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" style="--delay: 0.5s">
-                    <div class="skill-card-inner">
-                        <div class="skill-card-front">
-                            <div class="skill-icon-wrap">
-                                <i class="fab fa-microsoft"></i>
-                            </div>
-                            <h3>VSCode</h3>
-                        </div>
-                        <div class="skill-card-back">
-                            <h3>VSCode</h3>
-                            <p>Penggunaan Visual Studio Code sebagai editor untuk pengembangan proyek.</p>
-                            <div class="skill-tags"><span>Extensions</span><span>Themes</span></div>
                         </div>
                     </div>
                 </div>
