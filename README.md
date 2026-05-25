@@ -27,4 +27,4 @@ Selamat datang di repositori website portfolio pribadi saya! Website ini dibangu
 
 - **WhatsApp**: [Chat Me](https://wa.me/6285117229830)
 - **GitHub**: [nez4rt](https://github.com/nez4rt)
-- **Roblox**: [nez4rt Profile](https://www.roblox.com/users/1885565578/profile)
+- **Roblox**: [Roblox Profile](https://www.roblox.com/users/1885565578/profile)
