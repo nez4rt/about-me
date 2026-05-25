@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (loadingScreen) loadingScreen.classList.add('hidden');
     }, 2200);
 
-    // ── Scroll Reveal (timeline + skills dashboard) ──────────
-    const timelineItems = document.querySelectorAll('.timeline-item');
+    // ── Scroll Reveal (OS cards + skills dashboard) ──────────
+    const osCards = document.querySelectorAll('.os-card');
     const skillsDashboard = document.querySelector('.skills-dashboard-wrapper');
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -31,8 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.12 });
 
-    timelineItems.forEach(item => revealObserver.observe(item));
+    osCards.forEach(card => revealObserver.observe(card));
     if (skillsDashboard) revealObserver.observe(skillsDashboard);
+
+
+
+    // Expandable system specs toggle
+    const expandToggles = document.querySelectorAll('.os-expand-toggle');
+
+    expandToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            const card = e.currentTarget.closest('.os-card');
+            const isExpanded = card.classList.contains('expanded');
+            
+            card.classList.toggle('expanded');
+            
+            const label = toggle.querySelector('span');
+            if (label) {
+                label.textContent = isExpanded ? 'View System Specifications' : 'Hide System Specifications';
+            }
+        });
+    });
 
     // ── Skills Dashboard Terminal Interaction ────────────────
     const SKILLS_DATA = {

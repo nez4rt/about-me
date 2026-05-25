@@ -1,6 +1,6 @@
 # 🚀 Personal Portfolio - Moch Nazwar
 
-Selamat datang di repositori website portfolio pribadi saya! Website ini dibangun untuk menampilkan profil, riwayat pendidikan, serta keahlian dan minat saya di bidang teknologi.
+Selamat datang di repositori website portfolio pribadi saya! Website ini dibangun untuk menampilkan profil, log sistem operasi (OS Odyssey), serta keahlian dan minat saya di bidang teknologi.
 
 ## 🔧 Tech Stack
 
@@ -13,8 +13,8 @@ Selamat datang di repositori website portfolio pribadi saya! Website ini dibangu
 ## 🖥️ Fitur
 
 - **Hero Section**: Perkenalan singkat dan foto profil
-- **Education Journey**: Timeline riwayat pendidikan
-- **Skills & Interests**: Menampilkan keahlian seperti Web Basic, Python, Linux, GitHub, CLI, dan VSCode
+- **OS Odyssey**: Log perjalanan distro hopping dan sistem operasi interaktif (Daily Drivers, servers, testing envs) dengan penyaring kategori kustom dan sistem spesifikasi perangkat yang dapat diperluas (*expandable system specs*).
+- **Skills & Interests**: Menampilkan keahlian seperti Web Basic, Python, Linux, GitHub, CLI, dan VSCode dengan mock terminal interaktif.
 - **Contact**: Tautan langsung ke sosial media
 - **Responsive Design**: Tampilan yang menyesuaikan dengan berbagai ukuran layar perangkat mobile maupun desktop
 
