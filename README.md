@@ -13,8 +13,9 @@ Selamat datang di repositori website portfolio pribadi saya! Website ini dibangu
 ## 🖥️ Fitur
 
 - **Hero Section**: Perkenalan singkat dan foto profil
-- **OS Odyssey**: Log perjalanan distro hopping dan sistem operasi interaktif (Daily Drivers, servers, testing envs) dengan penyaring kategori kustom dan sistem spesifikasi perangkat yang dapat diperluas (*expandable system specs*).
+- **OS Odyssey**: Perjalanan dan detail konfigurasi sistem operasi utama saya (Windows 11 Heavily Tweaked & Arch Linux Workspace) dengan detail spesifikasi sistem yang dapat diperluas (*expandable system specs*).
 - **Skills & Interests**: Menampilkan keahlian seperti Web Basic, Python, Linux, GitHub, CLI, dan VSCode dengan mock terminal interaktif.
+- **Gaming Zone**: Menampilkan game favorit saya (AC4 Black Flag, Skyrim SE, dan Roblox) dikemas dalam bentuk kartu premium dengan statistik game kustom.
 - **Contact**: Tautan langsung ke sosial media
 - **Responsive Design**: Tampilan yang menyesuaikan dengan berbagai ukuran layar perangkat mobile maupun desktop
 
@@ -26,3 +27,4 @@ Selamat datang di repositori website portfolio pribadi saya! Website ini dibangu
 
 - **WhatsApp**: [Chat Me](https://wa.me/6285117229830)
 - **GitHub**: [nez4rt](https://github.com/nez4rt)
+- **Roblox**: [nez4rt Profile](https://www.roblox.com/users/1885565578/profile)

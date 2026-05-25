@@ -1306,6 +1306,219 @@ footer h2 {
     font-size: 0.9rem;
 }
 
+
+/* =========================
+   GAMING ZONE
+========================= */
+#gaming {
+    padding: 100px 0;
+    position: relative;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.game-card {
+    background: rgba(20, 20, 28, 0.55);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.game-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.game-icon-bg {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.015);
+    transform: rotate(-15deg);
+    transition: all 0.5s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.game-card:hover .game-icon-bg {
+    color: rgba(255, 255, 255, 0.04);
+    transform: rotate(-5deg) scale(1.15);
+}
+
+.game-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1;
+    height: 100%;
+}
+
+.game-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 15px;
+}
+
+.game-header h3 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: linear-gradient(90deg, #fff, #bbb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.game-genre {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.game-desc {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.game-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 15px;
+}
+
+.game-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.88rem;
+}
+
+.metric-label {
+    color: #888;
+}
+
+.metric-value {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Themes per game card */
+/* 1. AC4 Black Flag (Gold/Cyan Nautical Theme) */
+.card-ac4 {
+    border: 1px solid rgba(229, 169, 59, 0.15);
+}
+.card-ac4::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, #e5a93b, #116979);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.12;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+.card-ac4:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(229, 169, 59, 0.2);
+    border-color: rgba(229, 169, 59, 0.4);
+}
+.card-ac4:hover::after {
+    opacity: 0.35;
+}
+.card-ac4 .game-genre {
+    color: #e5a93b;
+}
+
+/* 2. Skyrim SE (Glacial Ice Blue Theme) */
+.card-skyrim {
+    border: 1px solid rgba(138, 182, 214, 0.15);
+}
+.card-skyrim::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, #8ab6d6, #00d2c4);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.12;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+.card-skyrim:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(138, 182, 214, 0.25);
+    border-color: rgba(138, 182, 214, 0.4);
+}
+.card-skyrim:hover::after {
+    opacity: 0.35;
+}
+.card-skyrim .game-genre {
+    color: #8ab6d6;
+}
+
+/* 3. Roblox (Classic Block Red/Vibrant Orange Theme) */
+.card-roblox {
+    border: 1px solid rgba(246, 63, 63, 0.15);
+}
+.card-roblox::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, #f63f3f, #ff7e40);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.12;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+.card-roblox:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(246, 63, 63, 0.25);
+    border-color: rgba(246, 63, 63, 0.4);
+}
+.card-roblox:hover::after {
+    opacity: 0.35;
+}
+.card-roblox .game-genre {
+    color: #f63f3f;
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
@@ -1333,6 +1546,11 @@ footer h2 {
     }
 
     .os-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .games-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2200);
 
     // ── Scroll Reveal (OS cards + skills dashboard) ──────────
-    const osCards = document.querySelectorAll('.os-card');
+    const revealCards = document.querySelectorAll('.os-card, .game-card');
     const skillsDashboard = document.querySelector('.skills-dashboard-wrapper');
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.12 });
 
-    osCards.forEach(card => revealObserver.observe(card));
+    revealCards.forEach(card => revealObserver.observe(card));
     if (skillsDashboard) revealObserver.observe(skillsDashboard);
 
 
