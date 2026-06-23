@@ -677,62 +677,6 @@ nav {
     margin-bottom: 22px;
 }
 
-/* Specs Metrics */
-.os-specs-wrapper {
-    margin-bottom: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.spec-metric {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.spec-info {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.78rem;
-    color: #999;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-}
-
-.spec-bar {
-    height: 5px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 99px;
-    overflow: hidden;
-}
-
-.spec-fill {
-    height: 100%;
-    border-radius: 99px;
-    transition: width 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.spec-fill-arch {
-    background: linear-gradient(90deg, #17a2b8, #8a2be2);
-    box-shadow: 0 0 8px rgba(23, 162, 184, 0.3);
-}
-
-.spec-fill-debian {
-    background: linear-gradient(90deg, #d70751, #e91e63);
-    box-shadow: 0 0 8px rgba(215, 7, 81, 0.3);
-}
-
-.spec-fill-fedora {
-    background: linear-gradient(90deg, #3c6eb4, #20b2aa);
-    box-shadow: 0 0 8px rgba(60, 110, 180, 0.3);
-}
-
-.spec-fill-windows {
-    background: linear-gradient(90deg, #0078d7, #00f2fe);
-    box-shadow: 0 0 8px rgba(0, 120, 215, 0.3);
-}
 
 /* System specs expander */
 .os-expand-toggle {

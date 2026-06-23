@@ -57,15 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const SKILLS_DATA = {
         linux: {
             title: 'Linux',
-            command: 'neofetch --distro "Arch Linux"',
+            command: 'neofetch --distro "Fedora"',
             systemStatus: 'Loading skill profile: Linux... OK',
             progress: 90,
             description: 'Penggunaan sistem operasi Linux sebagai sistem utama sehari-hari. Terbiasa mengelola repositori, konfigurasi dotfiles, optimasi kinerja, serta manajemen sistem modular.',
-            tags: ['Arch Linux', 'Ubuntu', 'ZSH', 'System Admin'],
+            tags: ['Fedora Linux', 'Ubuntu', 'ZSH', 'System Admin'],
             consoleOutput: [
-                '<span class="console-line text-cyan">OS: Arch Linux x86_64</span>',
-                '<span class="console-line text-cyan">Shell: zsh 5.9</span>',
-                '<span class="console-line text-cyan">WM: Hyprland (Wayland)</span>',
+                '<span class="console-line text-cyan">OS: Fedora KDE x86_64</span>',
+                '<span class="console-line text-cyan">Shell: Fish</span>',
+                '<span class="console-line text-cyan">WM/DE: KDE Plasma (Wayland)</span>',
                 '<span class="console-line text-green">[OK] All configurations loaded. Enjoy scripting!</span>'
             ]
         },
