@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const label = toggle.querySelector('span');
             if (label) {
-                label.textContent = isExpanded ? 'View System Specifications' : 'Hide System Specifications';
+                label.textContent = isExpanded ? 'View Specs' : 'Hide Specs';
             }
         });
     });
@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
             command: 'neofetch --distro "Fedora"',
             systemStatus: 'Loading skill profile: Linux... OK',
             progress: 90,
-            description: 'Penggunaan sistem operasi Linux sebagai sistem utama sehari-hari. Terbiasa mengelola repositori, konfigurasi dotfiles, optimasi kinerja, serta manajemen sistem modular.',
-            tags: ['Fedora Linux', 'Ubuntu', 'ZSH', 'System Admin'],
+            description: 'Linux is my daily driver. I enjoy customizing dotfiles, configuring window managers, shell scripting, and self-hosting services on headless servers.',
+            tags: ['Fedora', 'Ubuntu', 'Bash/Fish', 'Sysadmin'],
             consoleOutput: [
                 '<span class="console-line text-cyan">OS: Fedora KDE x86_64</span>',
                 '<span class="console-line text-cyan">Shell: Fish</span>',
@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
             command: 'cat web-basic.html',
             systemStatus: 'Loading skill profile: Web Basic... OK',
             progress: 85,
-            description: 'Membangun website yang cepat, responsif, dan interaktif menggunakan standar web modern. Berpengalaman dalam memanipulasi DOM dan styling kustom tanpa library tambahan.',
-            tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive'],
+            description: 'Building clean, fast, and responsive websites using modern standards. I prefer vanilla CSS and JavaScript over heavy frameworks whenever possible.',
+            tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
             consoleOutput: [
                 '<span class="console-line text-purple">&lt;div class="heart"&gt;❤️&lt;/div&gt; loaded successfully.</span>',
                 '<span class="console-line text-cyan">DOM Tree: parsed in 0.04ms</span>',
@@ -87,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
             command: 'python automate.py',
             systemStatus: 'Loading skill profile: Python... OK',
             progress: 75,
-            description: 'Mengotomatiskan tugas berulang, web scraping, dan memproses data menggunakan pustaka Python. Suka menulis skrip yang efisien dan bersih.',
-            tags: ['Scripting', 'Automation', 'APIs', 'Web Scraping'],
+            description: 'Writing scripts to automate boring tasks, scrape web data, or work with APIs. I aim to keep my code clean, readable, and efficient.',
+            tags: ['Scripting', 'Automation', 'Web Scraping', 'APIs'],
             consoleOutput: [
                 '<span class="console-line text-yellow">&gt;&gt;&gt; import os, sys</span>',
                 '<span class="console-line text-yellow">&gt;&gt;&gt; run_automation()</span>',
@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
             command: 'git push origin main',
             systemStatus: 'Loading skill profile: GitHub... OK',
             progress: 80,
-            description: 'Mengelola versi kode, berkolaborasi dengan pengembang lain, dan memelihara repositori open-source dengan git workflow yang rapi.',
-            tags: ['Git', 'Collaboration', 'CI/CD', 'Open Source'],
+            description: 'Version control is essential. I use Git and GitHub to track code changes, collaborate on projects, and manage open-source repos.',
+            tags: ['Git', 'GitHub', 'CI/CD', 'Open Source'],
             consoleOutput: [
                 '<span class="console-line text-purple">Enumerating objects: 5, done.</span>',
                 '<span class="console-line text-cyan">To github.com:nez4rt/about-me.git</span>',
@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
             command: 'bash deploy.sh',
             systemStatus: 'Loading skill profile: CLI... OK',
             progress: 85,
-            description: 'Sangat nyaman bekerja di terminal. Mampu menulis skrip shell yang kompleks untuk mengotomatiskan alur kerja sistem dan pemeliharaan server.',
-            tags: ['Bash', 'ZSH', 'Fish', 'Shell Scripting'],
+            description: 'The terminal is where I feel most productive. I write shell scripts to automate my local environment and manage servers.',
+            tags: ['Bash', 'Fish', 'SSH', 'Shell Scripting'],
             consoleOutput: [
                 '<span class="console-line text-yellow">[DEPLOY] Starting deployment script v1.0.4</span>',
                 '<span class="console-line text-cyan">[SYSTEM] Copying builds to public_html... done</span>',
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             command: 'code --list-extensions',
             systemStatus: 'Loading skill profile: VSCode... OK',
             progress: 80,
-            description: 'Mengoptimalkan lingkungan kerja dengan ekstensi produktivitas, snippet kustom, dan integrasi terminal untuk alur pengembangan super cepat.',
+            description: 'My code editor of choice. I keep it tuned with custom keybindings, useful extensions, and snippets to speed up my coding workflow.',
             tags: ['Extensions', 'Customization', 'Shortcuts', 'Efficiency'],
             consoleOutput: [
                 '<span class="console-line text-cyan">Extensions Active: Prettier, ESLint, GitLens, Live Server</span>',

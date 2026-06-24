@@ -1,29 +1,29 @@
 # 🚀 Personal Portfolio - Moch Nazwar
 
-Selamat datang di repositori website portfolio pribadi saya! Website ini dibangun untuk menampilkan profil, log sistem operasi (OS Odyssey), serta keahlian dan minat saya di bidang teknologi.
+Welcome to the repository for my personal portfolio website! This site showcases my profile, my operating system configurations (OS Setup), and my coding skills and interests.
 
 ## 🔧 Tech Stack
 
-- **HTML5** - Struktur semantik website
-- **CSS3 (Vanilla)** - Styling responsif dan modern
-- **JavaScript (Vanilla)** - Interaktivitas dasar (DOM manipulation)
-- **Google Fonts** - Menggunakan font 'Inter'
-- **Font Awesome** - Ikonografi
+- **HTML5** - Semantic layout
+- **CSS3 (Vanilla)** - Responsive, clean styling
+- **JavaScript (Vanilla)** - DOM manipulation and animations
+- **Google Fonts** - 'Inter' font
+- **Font Awesome** - Icons
 
-## 🖥️ Fitur
+## 🖥️ Features
 
-- **Hero Section**: Perkenalan singkat dan foto profil
-- **OS Odyssey**: Perjalanan dan detail konfigurasi sistem operasi utama saya (Windows 11 Heavily Tweaked & Fedora Workstation) dengan detail spesifikasi sistem yang dapat diperluas (*expandable system specs*).
-- **Skills & Interests**: Menampilkan keahlian seperti Web Basic, Python, Linux, GitHub, CLI, dan VSCode dengan mock terminal interaktif.
-- **Gaming Zone**: Menampilkan game favorit saya (AC4 Black Flag, Skyrim SE, dan Roblox) dikemas dalam bentuk kartu premium dengan statistik game kustom.
-- **Contact**: Tautan langsung ke sosial media
-- **Responsive Design**: Tampilan yang menyesuaikan dengan berbagai ukuran layar perangkat mobile maupun desktop
+- **Hero Section**: A quick introduction and my profile photo.
+- **OS Setup**: A logs section detailing my main operating systems (Heavily Tweaked Windows 11 & Fedora Workstation) complete with expandable hardware/software specs.
+- **Skills & Interests**: Interactive terminal dashboard showcasing my familiarity with Linux, Web development, Python, GitHub, CLI scripting, and VS Code.
+- **Gaming Zone**: Cards highlighting my favorite games (AC4 Black Flag, Skyrim SE, and Roblox) along with custom gameplay stats.
+- **Contact**: Links to reach out to me directly.
+- **Responsive Design**: Responsive layout that looks good on both mobile screens and desktop monitors.
 
 ## 📍 Live Demo
 
-[👉 Klik di sini](https://about-me-woad-seven.vercel.app/)
+[👉 View Site](https://about-me-woad-seven.vercel.app/)
 
-## 📫 Kontak
+## 📫 Contact
 
 - **WhatsApp**: [Chat Me](https://wa.me/6285117229830)
 - **GitHub**: [nez4rt](https://github.com/nez4rt)
