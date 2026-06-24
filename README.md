@@ -1,30 +1,70 @@
-# 🚀 Personal Portfolio - Moch Nazwar
+# about-me 🚀
 
-Welcome to the repository for my personal portfolio website! This site showcases my profile, my operating system configurations (OS Setup), and my coding skills and interests.
+A personal portfolio site built from scratch — no frameworks, no templates, just plain HTML, CSS, and JavaScript doing the heavy lifting.
 
-## 🔧 Tech Stack
+Check it out live: **[about-me-woad-seven.vercel.app](https://about-me-woad-seven.vercel.app/)**
 
-- **HTML5** - Semantic layout
-- **CSS3 (Vanilla)** - Responsive, clean styling
-- **JavaScript (Vanilla)** - DOM manipulation and animations
-- **Google Fonts** - 'Inter' font
-- **Font Awesome** - Icons
+---
 
-## 🖥️ Features
+## What's inside
 
-- **Hero Section**: A quick introduction and my profile photo.
-- **OS Setup**: A logs section detailing my main operating systems (Heavily Tweaked Windows 11 & Fedora Workstation) complete with expandable hardware/software specs.
-- **Skills & Interests**: Interactive terminal dashboard showcasing my familiarity with Linux, Web development, Python, GitHub, CLI scripting, and VS Code.
-- **Gaming Zone**: Cards highlighting my favorite games (AC4 Black Flag, Skyrim SE, and Roblox) along with custom gameplay stats.
-- **Contact**: Links to reach out to me directly.
-- **Responsive Design**: Responsive layout that looks good on both mobile screens and desktop monitors.
+The site has a few sections, each with its own vibe:
 
-## 📍 Live Demo
+**Hero** — Quick intro with a profile photo. First thing you see when you land.
 
-[👉 View Site](https://about-me-woad-seven.vercel.app/)
+**OS Setup** — A breakdown of the two setups I actually use day-to-day: a heavily debloated Windows 11 for gaming and dev work, and Fedora KDE as my main Linux driver. Each card has expandable specs if you wanna dig into the details.
 
-## 📫 Contact
+**Skills & Interests** — Styled as an interactive terminal dashboard. Click through the sidebar to see what I work with — Linux, HTML/CSS/JS, Python, GitHub, CLI scripting, and VS Code.
 
-- **WhatsApp**: [Chat Me](https://wa.me/6285117229830)
-- **GitHub**: [nez4rt](https://github.com/nez4rt)
-- **Roblox**: [Roblox Profile](https://www.roblox.com/users/1885565578/profile)
+**Gaming Zone** — Cards for my go-to games: AC4 Black Flag, Skyrim SE (500+ mods and still running), and Roblox. Also where I mess around with Luau scripting.
+
+**Contact** — Links to reach me.
+
+---
+
+## Stack
+
+Built with nothing but the basics:
+
+- **HTML5** — semantic structure
+- **CSS3** — all vanilla, responsive layout
+- **JavaScript** — DOM manipulation, animations, interactive terminal
+- **Font Awesome** — icons
+- **Google Fonts** — Inter
+
+No build tools, no npm installs, no bundlers. Just open `index.html` and it runs.
+
+---
+
+## Running locally
+
+```bash
+git clone https://github.com/nez4rt/about-me.git
+cd about-me
+```
+
+Open `index.html` in your browser. That's it.
+
+---
+
+## Project structure
+
+```
+about-me/
+├── index.html      # main page
+├── style.css       # all styles
+├── script.js       # interactions & animations
+└── pp.jpeg         # profile photo
+```
+
+---
+
+## Contact
+
+- GitHub: [@nez4rt](https://github.com/nez4rt)
+- WhatsApp: [Chat me](https://wa.me/6285117229830)
+- Roblox: [Profile](https://www.roblox.com/users/1885565578/profile)
+
+---
+
+*crafted with ❤️ + ☕ by Moch Nazwar*
