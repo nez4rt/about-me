@@ -16,7 +16,7 @@ The site has a few sections, each with its own vibe:
 
 **Skills & Interests** — Styled as an interactive terminal dashboard. Click through the sidebar to see what I work with — Linux, HTML/CSS/JS, Python, GitHub, CLI scripting, and VS Code.
 
-**Gaming Zone** — Cards for my go-to games: AC4 Black Flag, Skyrim SE (500+ mods and still running), and Roblox. Also where I mess around with Luau scripting.
+**Gaming Zone** — Cards for my go-to games: Stardew Valley, Skyrim SE (500+ mods and still running), and Roblox. Also where I mess around with Luau scripting.
 
 **Contact** — Links to reach me.
 
