@@ -157,51 +157,93 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = SKILLS_DATA[skillKey];
         if (!data) return;
 
-        // Reset output container visibility
-        if (outputContainer) outputContainer.classList.add('faded-out');
+        // Check if we are on a mobile device (width <= 768px)
+        const isMobile = window.innerWidth <= 768;
 
-        // Start command line typing simulation
-        if (terminalCommand) {
-            terminalCommand.textContent = '';
-            let charIndex = 0;
-            const fullCommand = data.command;
+        if (isMobile) {
+            // Instant load on mobile to bypass layout updates in loops and opacity transitions
+            if (terminalCommand) {
+                terminalCommand.textContent = data.command;
+            }
+            if (systemOutput) {
+                systemOutput.textContent = data.systemStatus;
+            }
+            if (skillTitle) {
+                skillTitle.textContent = data.title;
+            }
+            if (skillDescription) {
+                skillDescription.textContent = data.description;
+            }
             
-            typingInterval = setInterval(() => {
-                if (charIndex < fullCommand.length) {
-                    terminalCommand.textContent += fullCommand.charAt(charIndex);
-                    charIndex++;
-                } else {
-                    clearInterval(typingInterval);
-                    
-                    // Show terminal content with delay for realism
-                    transitionTimeout = setTimeout(() => {
-                        if (outputContainer) outputContainer.classList.remove('faded-out');
+            // Rebuild tags
+            if (skillTags) {
+                skillTags.innerHTML = '';
+                data.tags.forEach(tag => {
+                    const span = document.createElement('span');
+                    span.textContent = tag;
+                    skillTags.appendChild(span);
+                });
+            }
+            
+            // Rebuild console output
+            if (consoleOutput) {
+                consoleOutput.innerHTML = '';
+                data.consoleOutput.forEach(line => {
+                    consoleOutput.innerHTML += line;
+                });
+            }
+
+            // Ensure container is not faded out on mobile
+            if (outputContainer) {
+                outputContainer.classList.remove('faded-out');
+            }
+        } else {
+            // Reset output container visibility on desktop
+            if (outputContainer) outputContainer.classList.add('faded-out');
+
+            // Start command line typing simulation
+            if (terminalCommand) {
+                terminalCommand.textContent = '';
+                let charIndex = 0;
+                const fullCommand = data.command;
+                
+                typingInterval = setInterval(() => {
+                    if (charIndex < fullCommand.length) {
+                        terminalCommand.textContent += fullCommand.charAt(charIndex);
+                        charIndex++;
+                    } else {
+                        clearInterval(typingInterval);
                         
-                        // Update contents
-                        if (systemOutput) systemOutput.textContent = data.systemStatus;
-                        if (skillTitle) skillTitle.textContent = data.title;
-                        if (skillDescription) skillDescription.textContent = data.description;
-                        
-                        // Rebuild tags
-                        if (skillTags) {
-                            skillTags.innerHTML = '';
-                            data.tags.forEach(tag => {
-                                const span = document.createElement('span');
-                                span.textContent = tag;
-                                skillTags.appendChild(span);
-                            });
-                        }
-                        
-                        // Rebuild console output
-                        if (consoleOutput) {
-                            consoleOutput.innerHTML = '';
-                            data.consoleOutput.forEach(line => {
-                                consoleOutput.innerHTML += line;
-                            });
-                        }
-                    }, 250);
-                }
-            }, 30); // 30ms per character typing speed
+                        // Show terminal content with delay for realism
+                        transitionTimeout = setTimeout(() => {
+                            if (outputContainer) outputContainer.classList.remove('faded-out');
+                            
+                            // Update contents
+                            if (systemOutput) systemOutput.textContent = data.systemStatus;
+                            if (skillTitle) skillTitle.textContent = data.title;
+                            if (skillDescription) skillDescription.textContent = data.description;
+                            
+                            // Rebuild tags
+                            if (skillTags) {
+                                skillTags.innerHTML = '';
+                                data.tags.forEach(tag => {
+                                    const span = document.createElement('span');
+                                    span.textContent = tag;
+                                    skillTags.appendChild(span);
+                                });
+                            }
+                            
+                            // Rebuild console output
+                            if (consoleOutput) {
+                                consoleOutput.innerHTML = '';
+                                data.consoleOutput.forEach(line => {
+                                    consoleOutput.innerHTML += line;
+                                });
+                            }
+                        }, 250);
+                    }
+                }, 30); // 30ms per character typing speed
+            }
         }
     }
 
