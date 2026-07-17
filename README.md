@@ -14,7 +14,7 @@ The site has a few sections, each with its own vibe:
 
 **OS Setup** — A breakdown of the two setups I actually use day-to-day: a heavily debloated Windows 11 for gaming and dev work, and Fedora KDE as my main Linux driver. Each card has expandable specs if you wanna dig into the details.
 
-**Skills & Interests** — Styled as an interactive terminal dashboard. Click through the sidebar to see what I work with — Linux, HTML/CSS/JS, Python, GitHub, CLI scripting, and VS Code.
+**Skills & Interests** — Styled as an interactive terminal dashboard. Click through the sidebar to see what I work with — Linux, Sysadmin & Service, Display Config, GitHub, CLI scripting, and VS Code.
 
 **Gaming Zone** — Cards for my go-to games: Stardew Valley, Skyrim SE (500+ mods and still running), and Roblox. Also where I mess around with Luau scripting.
 

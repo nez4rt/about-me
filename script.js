@@ -69,30 +69,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 '<span class="console-line text-green">[OK] All configurations loaded. Enjoy scripting!</span>'
             ]
         },
-        'web-basic': {
-            title: 'Web Basic',
-            command: 'cat web-basic.html',
-            systemStatus: 'Loading skill profile: Web Basic... OK',
+        'sysadmin-service': {
+            title: 'Sysadmin & Service',
+            command: 'systemctl status nginx.service',
+            systemStatus: 'Checking system service status... OK',
             progress: 85,
-            description: 'Building clean, fast, and responsive websites using modern standards. I prefer vanilla CSS and JavaScript over heavy frameworks whenever possible.',
-            tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+            description: 'Managing system daemons, services, and system configuration. I write systemd service files, set up reverse proxies, and monitor host resources to keep servers running smoothly.',
+            tags: ['Systemd', 'Nginx', 'Services', 'Sysadmin', 'Logs'],
             consoleOutput: [
-                '<span class="console-line text-purple">&lt;div class="heart"&gt;❤️&lt;/div&gt; loaded successfully.</span>',
-                '<span class="console-line text-cyan">DOM Tree: parsed in 0.04ms</span>',
-                '<span class="console-line text-green">[OK] Frontend assets compiled & running in hot-reload mode.</span>'
+                '<span class="console-line text-cyan">● nginx.service - A high performance web server</span>',
+                '<span class="console-line text-cyan">   Active: active (running) since Fri 2026-07-17 08:00:12 WIB</span>',
+                '<span class="console-line text-cyan">   Main PID: 1254 (nginx)</span>',
+                '<span class="console-line text-green">[OK] Nginx service is running normally.</span>'
             ]
         },
-        python: {
-            title: 'Python',
-            command: 'python automate.py',
-            systemStatus: 'Loading skill profile: Python... OK',
-            progress: 75,
-            description: 'Writing scripts to automate boring tasks, scrape web data, or work with APIs. I aim to keep my code clean, readable, and efficient.',
-            tags: ['Scripting', 'Automation', 'Web Scraping', 'APIs'],
+        'display-config': {
+            title: 'Display Config',
+            command: 'cat ~/.config/kitty/kitty.conf',
+            systemStatus: 'Reading terminal configuration... OK',
+            progress: 80,
+            description: 'Customizing display servers, window managers, and terminal settings. I configure layout behaviors, fonts, opacity levels, and color themes for my daily workflows.',
+            tags: ['Hyprland', 'Kitty', 'Wayland', 'Dotfiles', 'Themes'],
             consoleOutput: [
-                '<span class="console-line text-yellow">&gt;&gt;&gt; import os, sys</span>',
-                '<span class="console-line text-yellow">&gt;&gt;&gt; run_automation()</span>',
-                '<span class="console-line text-green">[OK] Automation completed: 154 files organized in 0.42s.</span>'
+                '<span class="console-line text-yellow">font_family      JetBrainsMono Nerd Font</span>',
+                '<span class="console-line text-yellow">background_opacity 0.85</span>',
+                '<span class="console-line text-yellow">include themes/tokyo-night.conf</span>',
+                '<span class="console-line text-green">[OK] Terminal configuration applied successfully.</span>'
             ]
         },
         github: {
