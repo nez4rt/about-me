@@ -62,9 +62,9 @@ about-me/
 ## Contact
 
 - GitHub: [@nez4rt](https://github.com/nez4rt)
-- WhatsApp: [Chat me](https://wa.me/6285117229830)
+- Telegram: [Chat me](https://t.me/Nez4rt)
 - Roblox: [Profile](https://www.roblox.com/users/1885565578/profile)
 
 ---
 
-*crafted with ❤️ + ☕ by Moch Nazwar*
+_crafted with ❤️ + ☕ by Moch Nazwar_
