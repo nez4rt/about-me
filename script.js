@@ -57,13 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const SKILLS_DATA = {
         linux: {
             title: 'Linux',
-            command: 'neofetch --distro "Fedora"',
+            command: 'fastfetch --distro "CachyOS"',
             systemStatus: 'Loading skill profile: Linux... OK',
             progress: 90,
             description: 'Linux is my daily driver. I enjoy customizing dotfiles, configuring window managers, shell scripting, and self-hosting services on headless servers.',
-            tags: ['Fedora', 'Ubuntu', 'Bash/Fish', 'Sysadmin'],
+            tags: ['CachyOS', 'Arch Linux', 'Bash/Fish', 'Sysadmin'],
             consoleOutput: [
-                '<span class="console-line text-cyan">OS: Fedora KDE x86_64</span>',
+                '<span class="console-line text-cyan">OS: CachyOS x86_64</span>',
+                '<span class="console-line text-cyan">Kernel: linux-cachyos</span>',
                 '<span class="console-line text-cyan">Shell: Fish</span>',
                 '<span class="console-line text-cyan">WM/DE: KDE Plasma (Wayland)</span>',
                 '<span class="console-line text-green">[OK] All configurations loaded. Enjoy scripting!</span>'

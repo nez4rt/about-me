@@ -12,7 +12,7 @@ The site has a few sections, each with its own vibe:
 
 **Hero** — Quick intro with a profile photo. First thing you see when you land.
 
-**OS Setup** — A breakdown of the two setups I actually use day-to-day: a heavily debloated Windows 11 for gaming and dev work, and Fedora KDE as my main Linux driver. Each card has expandable specs if you wanna dig into the details.
+**OS Setup** — A breakdown of the two setups I actually use day-to-day: a heavily debloated Windows 11 for gaming and dev work, and CachyOS as my main Linux driver. Each card has expandable specs if you wanna dig into the details.
 
 **Skills & Interests** — Styled as an interactive terminal dashboard. Click through the sidebar to see what I work with — Linux, Sysadmin & Service, Display Config, GitHub, CLI scripting, and VS Code.
 
