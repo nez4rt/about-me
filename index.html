@@ -1,383 +1,503 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Moch Nazwar's personal website — Linux enthusiast, developer, and open-source advocate.">
-    <meta name="author" content="Moch Nazwar">
-    <title>Moch Nazwar — About Me</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%238a2be2'/%3E%3Cstop offset='100%25' stop-color='%2320b2aa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='16' font-family='Arial' fill='white' font-weight='bold'%3EN%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nazwar — Personal Digital Identity</title>
+  <meta name="description" content="Personal digital space of Nazwar — Exploring Linux systems, command-line tools, software development, custom dotfiles, and gaming." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Ambient Noise Canvas & Glow -->
+  <canvas id="noise-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-glow" aria-hidden="true"></div>
 
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loader-content">
-            <div class="loader-logo">
-                <i class="fas fa-user-astronaut"></i>
-            </div>
-            <div class="loader-bar-track">
-                <div class="loader-bar"></div>
-            </div>
-            <p class="loader-text">Booting up...</p>
-        </div>
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="prompt-symbol">&gt;</span> Nezart<span class="cursor-blink">_</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#tools">Tools</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#games">Games</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
+  </header>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">
-                    <i class="fas fa-user-astronaut"></i>Nazwar
-                </a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#whoami">About Me</a></li>
-                    <li><a href="#os-odyssey">OS Setup</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#gaming">Gaming</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <div class="status-badge hero-fade-1">
+          <span class="pulse-dot"></span>
+          <span>Exploring systems, configurations & games</span>
         </div>
-    </header>
+        <h1 class="hero-title hero-fade-2">
+          Hi, I'm <span class="accent-text">Nazwar</span>.
+        </h1>
+        <p class="hero-subtitle hero-fade-3">
+          Exploring systems, code, and everything in between.
+        </p>
+        <div class="hero-actions hero-fade-4">
+          <a href="#tools" class="btn btn-primary">
+            Explore
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#about" class="btn btn-secondary">About Me</a>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <a href="#about" aria-label="Scroll down">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M7 13l5 5 5-5M12 6v12"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
 
-    <!-- Hero -->
-    <section id="whoami" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hi, I'm Moch Nazwar</h1>
-                <p>
-                    I build things, break things, and spend way too much time in the Linux terminal. I'm all about open-source tech, automation, and self-hosting.
+    <!-- 2. ABOUT ME SECTION -->
+    <section id="about" class="section reveal">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">// 01. IDENTITY</span>
+          <h2 class="section-title">A little about me.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-card">
+            <p class="about-lead">
+              I'm Nazwar — electrical engineering student and system explorer focused on building fast, reliable tools and refining computing environments.
+            </p>
+            <p class="about-body">
+              Instead of accepting default configurations, I enjoy peeling back the layers—optimizing Linux systems, crafting custom command-line utilities, tweaking display compositors, and configuring efficient terminal workflows. When I'm away from the terminal, I enjoy games like Skyrim SE, Stardew Valley, and Roblox.
+            </p>
+          </div>
+
+          <div class="info-cards-grid">
+            <div class="info-card">
+              <div class="info-card-header">
+                <span class="info-icon">📍</span>
+                <span class="info-label">Location</span>
+              </div>
+              <div class="info-value">Indonesia</div>
+              <div class="info-subtext" id="live-clock">UTC+7 • Local time</div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-header">
+                <span class="info-icon">⚙️</span>
+                <span class="info-label">Core Focus</span>
+              </div>
+              <div class="info-value">Linux & Systems</div>
+              <div class="info-subtext">SysAdmin, Shells, Dotfiles</div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-header">
+                <span class="info-icon">📚</span>
+                <span class="info-label">Learning</span>
+              </div>
+              <div class="info-value">Rust & Systems</div>
+              <div class="info-subtext">CLI Tools & Automation</div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-header">
+                <span class="info-icon">⚡</span>
+                <span class="info-label">Playground</span>
+              </div>
+              <div class="info-value">Terminal & Dotfiles</div>
+              <div class="info-subtext">Neovim & Shell Scripting</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SKILLS & TOOLS SECTION -->
+    <section id="tools" class="section reveal">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">// 02. ECOSYSTEM</span>
+          <h2 class="section-title">Tools I Live In.</h2>
+          <p class="section-description">
+            A curated stack of operating systems, development tools, and CLI utilities I use daily.
+          </p>
+        </div>
+
+        <!-- Systems Category -->
+        <div class="tool-category">
+          <h3 class="category-name">
+            <span class="category-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </span>
+            Systems
+          </h3>
+          <div class="tools-grid">
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">Linux</div>
+                <div class="tool-desc">Daily driver operating system</div>
+              </div>
+              <span class="tool-tooltip">Kernel Tuning & Performance</span>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">System Administration</div>
+                <div class="tool-desc">Server management & systemd</div>
+              </div>
+              <span class="tool-tooltip">Automation & Services</span>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">Display Configuration</div>
+                <div class="tool-desc">Wayland, X11 & Compositors</div>
+              </div>
+              <span class="tool-tooltip">Dynamic Window Tiling</span>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">System Configuration</div>
+                <div class="tool-desc">Modular dotfiles & environment</div>
+              </div>
+              <span class="tool-tooltip">Version Controlled Dotfiles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Development Category -->
+        <div class="tool-category">
+          <h3 class="category-name">
+            <span class="category-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </span>
+            Development
+          </h3>
+          <div class="tools-grid">
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">GitHub</div>
+                <div class="tool-desc">Code hosting & repositories</div>
+              </div>
+              <span class="tool-tooltip">Version Control</span>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">CLI</div>
+                <div class="tool-desc">Command-line first tooling</div>
+              </div>
+              <span class="tool-tooltip">Fast & Scriptable</span>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 17l6-6-6-6M12 19h8"></path></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">Shell</div>
+                <div class="tool-desc">Zsh & Fish shell environments</div>
+              </div>
+              <span class="tool-tooltip">Custom Prompts & Scripts</span>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16.5 9.4 7.55 4.24a1.8 1.8 0 0 0-2.48.67l-2 3.47a1.8 1.8 0 0 0 .66 2.47L12.5 16l-8.77 5.15a1.8 1.8 0 0 0-.66 2.47l2 3.47a1.8 1.8 0 0 0 2.48.67l14.88-8.6a1.8 1.8 0 0 0 0-3.14L16.5 9.4z"></path></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">VS Code</div>
+                <div class="tool-desc">Lightweight dark editor workspace</div>
+              </div>
+              <span class="tool-tooltip">Custom Keybindings</span>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">Neovim</div>
+                <div class="tool-desc">Modal terminal code editor</div>
+              </div>
+              <span class="tool-tooltip">Lua Configured</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workflow Category -->
+        <div class="tool-category">
+          <h3 class="category-name">
+            <span class="category-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </span>
+            Workflow
+          </h3>
+          <div class="tools-grid">
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M6 8h.01M10 8h.01M14 8h.01"></path></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">Terminal</div>
+                <div class="tool-desc">Foot & Kitty emulators</div>
+              </div>
+              <span class="tool-tooltip">GPU Accelerated</span>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" y1="9" x2="6" y2="21"></line></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">Git</div>
+                <div class="tool-desc">Version control & workflow</div>
+              </div>
+              <span class="tool-tooltip">Signed Commits</span>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">CLI Utilities</div>
+                <div class="tool-desc">rg, fd, fzf, btop, tmux</div>
+              </div>
+              <span class="tool-tooltip">Keyboard Driven</span>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              </div>
+              <div class="tool-info">
+                <div class="tool-name">Configuration Tools</div>
+                <div class="tool-desc">Environment scripts & dotfiles</div>
+              </div>
+              <span class="tool-tooltip">Custom Workspaces</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. HOW I WORK SECTION -->
+    <section id="workflow" class="section reveal">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">// 03. ENVIRONMENT</span>
+          <h2 class="section-title">Terminal-first.</h2>
+          <p class="section-description">
+            Interactive shell simulation to explore my digital workspace environment.
+          </p>
+        </div>
+
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="terminal-title">nezart@cachyos:~</div>
+            <div class="terminal-subtitle">⚡ Interactive CLI</div>
+          </div>
+
+          <div class="terminal-body">
+            <!-- Interactive CLI Only -->
+            <div class="cli-output" id="cli-output">
+              <div class="cli-line">Welcome to Nazwar's Interactive Web Terminal v2.6.0</div>
+              <div class="cli-line">Type <span class="code-keyword">'help'</span> to see available commands or click quick chips below.</div>
+            </div>
+            <div class="cli-chips">
+              <button class="cli-chip" data-cmd="help">help</button>
+              <button class="cli-chip" data-cmd="fetch">fetch</button>
+              <button class="cli-chip" data-cmd="tools">tools</button>
+              <button class="cli-chip" data-cmd="games">games</button>
+              <button class="cli-chip" data-cmd="clear">clear</button>
+            </div>
+            <div class="cli-input-wrapper">
+              <span class="prompt-user">nezart@cachyos:~$</span>
+              <input type="text" id="cli-input" class="cli-input" placeholder="type command..." autocomplete="off" spellcheck="false" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. GAMES I LIKE SECTION -->
+    <section id="games" class="section reveal">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">// 04. RECREATION</span>
+          <h2 class="section-title">Games I Keep Coming Back To.</h2>
+          <p class="section-description">
+            A small personal collection of game worlds I appreciate for their atmosphere, mechanics, and replayability.
+          </p>
+        </div>
+
+        <div class="games-layout">
+          <!-- Featured Game: Skyrim SE -->
+          <div class="game-card game-featured">
+            <img src="assets/skyrim.jpg" alt="Skyrim SE artwork" class="game-art" loading="lazy" />
+            <div class="game-gradient"></div>
+            <div class="game-details">
+              <span class="game-genre">Open World RPG</span>
+              <h3 class="game-title">Skyrim Special Edition</h3>
+              <p class="game-note">
+                Masterpiece in open-world exploration, modding possibilities, and iconic nord atmosphere.
+              </p>
+            </div>
+          </div>
+
+          <!-- Smaller Game Grid: Stardew Valley & Roblox -->
+          <div class="games-subgrid">
+            <div class="game-card">
+              <img src="assets/stardew.png" alt="Stardew Valley artwork" class="game-art" loading="lazy" />
+              <div class="game-gradient"></div>
+              <div class="game-details">
+                <span class="game-genre">Cozy Farming / Simulation</span>
+                <h3 class="game-title">Stardew Valley</h3>
+                <p class="game-note">
+                  Relaxing pixel-art farming life with endless charm, cozy soundtrack, and deep progression.
                 </p>
+              </div>
+            </div>
 
-                <div class="hero-img">
-                    <img src="pp.jpeg" alt="Profile Picture">
-                </div>
-
-                <p>
-                    When I'm not tweaking my dotfiles or scripting, you'll probably find me playing video games, watching anime, or reading up on new tech.
+            <div class="game-card">
+              <img src="assets/roblox.jpg" alt="Roblox artwork" class="game-art" loading="lazy" />
+              <div class="game-gradient"></div>
+              <div class="game-details">
+                <span class="game-genre">Sandbox / Platform</span>
+                <h3 class="game-title">Roblox</h3>
+                <p class="game-note">
+                  Creative sandbox platform with diverse community experiences and infinite mini-games.
                 </p>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- OS Configuration (Distro Hopping Chronicles) -->
-    <section id="os-odyssey">
-        <div class="container">
-            <h2 class="section-title">My OS Setup</h2>
-            <p class="section-subtitle">The operating systems and Linux distributions I daily-drive, customize, or deploy on my servers.</p>
-            
-            <!-- OS Grid -->
-            <div class="os-grid">
-                
-                <!-- CachyOS -->
-                <div class="os-card secondary card-cachyos" data-category="secondary">
-                    <div class="os-card-header">
-                        <div class="os-icon">
-                            <i class="fab fa-linux"></i>
-                        </div>
-                        <div class="os-meta">
-                            <h3>CachyOS</h3>
-                            <span class="os-tagline">Linux Desktop (Arch-based)</span>
-                        </div>
-                    </div>
-                    <div class="os-card-body">
-                        <p class="os-desc">My daily driver Linux distro. Arch-based with customized performance kernels, lightning-fast pacman package management, and a smooth KDE desktop experience.</p>
-                        
-
-
-                        <!-- System specs expander -->
-                        <div class="os-expand-toggle">
-                            <span>View Specs</span> <i class="fas fa-chevron-down"></i>
-                        </div>
-
-                        <!-- Expandable System Specs Info -->
-                        <div class="os-expanded-specs">
-                            <ul class="specs-list">
-                                <li><i class="fas fa-microchip"></i> <strong>Kernel:</strong> linux-cachyos</li>
-                                <li><i class="fas fa-wind"></i> <strong>DE:</strong> KDE Plasma (Wayland)</li>
-                                <li><i class="fas fa-terminal"></i> <strong>Shell:</strong> Fish</li>
-                                <li><i class="fas fa-box-open"></i> <strong>Core Tools:</strong> Pacman, Paru, Flatpak, Neovim</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Windows 11 -->
-                <div class="os-card daily card-windows" data-category="daily">
-                    <div class="os-card-header">
-                        <div class="os-icon">
-                            <i class="fab fa-windows"></i>
-                        </div>
-                        <div class="os-meta">
-                            <h3>Windows 11</h3>
-                            <span class="os-tagline">Heavily Tweaked</span>
-                        </div>
-                    </div>
-                    <div class="os-card-body">
-                        <p class="os-desc">My main OS for gaming and dev tasks that need Windows. I've stripped out the pre-installed bloatware and tuned it to run fast and quiet.</p>
-                        
-
-
-                        <!-- System specs expander -->
-                        <div class="os-expand-toggle">
-                            <span>View Specs</span> <i class="fas fa-chevron-down"></i>
-                        </div>
-
-                        <!-- Expandable System Specs Info -->
-                        <div class="os-expanded-specs">
-                            <ul class="specs-list">
-                                <li><i class="fas fa-cogs"></i> <strong>Optimization:</strong> Deep Registry Tweaks & Debloat</li>
-                                <li><i class="fas fa-terminal"></i> <strong>Terminal:</strong> Windows Terminal + PowerShell Core</li>
-                                <li><i class="fas fa-layer-group"></i> <strong>Subsystem:</strong> WSL2 Integration</li>
-                                <li><i class="fas fa-gamepad"></i> <strong>Primary Use:</strong> Development & Gaming</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- 6. CONTACT / SOCIAL LINKS SECTION -->
+    <section id="contact" class="section reveal">
+      <div class="section-container">
+        <div class="section-header center">
+          <span class="section-tag">// 05. CONNECT</span>
+          <h2 class="section-title">Find me around the internet.</h2>
+          <p class="section-description">
+            Feel free to reach out for collaboration, dotfile chats, or gaming.
+          </p>
         </div>
+
+        <div class="social-cards-grid">
+          <!-- GitHub Card -->
+          <a href="https://github.com/nez4rt" target="_blank" rel="noopener" class="social-card">
+            <div class="social-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </div>
+            <div class="social-info">
+              <div class="social-platform">GitHub</div>
+              <div class="social-handle">@Nez4rt</div>
+            </div>
+            <div class="social-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </a>
+
+          <!-- Telegram Card -->
+          <a href="https://t.me/Nez4rt" target="_blank" rel="noopener" class="social-card">
+            <div class="social-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </div>
+            <div class="social-info">
+              <div class="social-platform">Telegram</div>
+              <div class="social-handle">@Nez4rt</div>
+            </div>
+            <div class="social-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </a>
+
+          <!-- Roblox Card -->
+          <a href="https://www.roblox.com/share?code=22fd7833ae80f74790ec0d9e07d7d381&type=Profile&source=ProfileShare&stamp=1788659872501" target="_blank" rel="noopener" class="social-card">
+            <div class="social-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3" transform="rotate(15 12 12)" /><rect x="9.5" y="9.5" width="5" height="5" rx="1" transform="rotate(15 12 12)" fill="currentColor"/></svg>
+            </div>
+            <div class="social-info">
+              <div class="social-platform">Roblox</div>
+              <div class="social-handle">@DE4DB33F</div>
+            </div>
+            <div class="social-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Skills -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Interests</h2>
-            
-            <div class="skills-dashboard-wrapper">
-                <!-- Left Panel: Sidebar -->
-                <div class="skills-selector">
-                    <button class="skill-btn active" data-skill="linux">
-                        <div class="skill-btn-icon"><i class="fab fa-linux"></i></div>
-                        <div class="skill-btn-info">
-                            <h4>Linux</h4>
-                            <span>OS & Scripting</span>
-                        </div>
-                        <i class="fas fa-chevron-right arrow-indicator"></i>
-                    </button>
-                    
-                    <button class="skill-btn" data-skill="sysadmin-service">
-                        <div class="skill-btn-icon"><i class="fas fa-cogs"></i></div>
-                        <div class="skill-btn-info">
-                            <h4>Sysadmin & Service</h4>
-                            <span>Server Management</span>
-                        </div>
-                        <i class="fas fa-chevron-right arrow-indicator"></i>
-                    </button>
-                    
-                    <button class="skill-btn" data-skill="display-config">
-                        <div class="skill-btn-icon"><i class="fas fa-desktop"></i></div>
-                        <div class="skill-btn-info">
-                            <h4>Display Config</h4>
-                            <span>WM & Customization</span>
-                        </div>
-                        <i class="fas fa-chevron-right arrow-indicator"></i>
-                    </button>
-                    
-                    <button class="skill-btn" data-skill="github">
-                        <div class="skill-btn-icon"><i class="fab fa-github"></i></div>
-                        <div class="skill-btn-info">
-                            <h4>GitHub</h4>
-                            <span>Version Control</span>
-                        </div>
-                        <i class="fas fa-chevron-right arrow-indicator"></i>
-                    </button>
-                    
-                    <button class="skill-btn" data-skill="cli">
-                        <div class="skill-btn-icon"><i class="fas fa-terminal"></i></div>
-                        <div class="skill-btn-info">
-                            <h4>CLI & Shell</h4>
-                            <span>Command Line</span>
-                        </div>
-                        <i class="fas fa-chevron-right arrow-indicator"></i>
-                    </button>
-                    
-                    <button class="skill-btn" data-skill="vscode">
-                        <div class="skill-btn-icon"><i class="fab fa-microsoft"></i></div>
-                        <div class="skill-btn-info">
-                            <h4>VSCode</h4>
-                            <span>Dev Environment</span>
-                        </div>
-                        <i class="fas fa-chevron-right arrow-indicator"></i>
-                    </button>
-                </div>
+  <!-- 7. FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-name">Nazwar</span>
+        <span class="footer-tagline">Built with ☕ and ❤️.</span>
+      </div>
+      <div class="footer-copyright">
+        © 2026 Nazwar
+      </div>
+      <a href="#hero" class="back-to-top" aria-label="Back to top">
+        Back to top ↑
+      </a>
+    </div>
+  </footer>
 
-                <!-- Right Panel: Interactive Terminal -->
-                <div class="skills-terminal-panel">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="dot dot-close"></span>
-                            <span class="dot dot-minimize"></span>
-                            <span class="dot dot-maximize"></span>
-                        </div>
-                        <div class="terminal-title">nazwar@cachyos: ~/skills</div>
-                        <div class="terminal-status">
-                            <span class="pulse-indicator"></span> online
-                        </div>
-                    </div>
-                    <div class="terminal-body">
-                        <!-- CLI Command Prompt Row -->
-                        <div class="terminal-prompt-line">
-                            <span class="prompt-user">nazwar@cachyos</span>:<span class="prompt-path">~/skills</span>$ <span class="prompt-command" id="terminal-command">fastfetch --distro "CachyOS"</span><span class="terminal-cursor"></span>
-                        </div>
-
-                        <!-- Terminal Dynamic Output Block -->
-                        <div class="terminal-output-container" id="terminal-output-container">
-                            <div class="system-output" id="system-output">[SYSTEM] Loading skill profile: Linux... OK</div>
-                            
-                            <div class="terminal-main-content">
-                                <h3 id="skill-title">Linux</h3>
-                                
-
-                                
-                                <p id="skill-description">Linux is my daily driver. I enjoy customizing dotfiles, configuring window managers, shell scripting, and self-hosting services on headless servers.</p>
-                                
-                                <div class="skill-tags" id="skill-tags">
-                                    <span>CachyOS</span>
-                                    <span>Arch Linux</span>
-                                    <span>Bash/Fish</span>
-                                    <span>Sysadmin</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Simulated Terminal Command Return -->
-                            <div class="terminal-console-output" id="terminal-console-output">
-                                <span class="console-line text-cyan">OS: CachyOS x86_64</span>
-                                <span class="console-line text-cyan">Kernel: linux-cachyos</span>
-                                <span class="console-line text-cyan">Shell: Fish</span>
-                                <span class="console-line text-cyan">WM/DE: KDE Plasma (Wayland)</span>
-                                <span class="console-line text-green">[OK] All configurations loaded. Enjoy scripting!</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gaming Zone -->
-    <section id="gaming">
-        <div class="container">
-            <h2 class="section-title">Gaming Zone</h2>
-            <p class="section-subtitle">A few of my favorite games, custom setups, and digital worlds I spend time in.</p>
-            
-            <div class="games-grid">
-                <!-- Stardew Valley -->
-                <div class="game-card card-stardew">
-                    <div class="game-icon-bg">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <div class="game-card-content">
-                        <div class="game-header">
-                            <h3>Stardew Valley</h3>
-                            <span class="game-genre">Cozy RPG / Farming Sim</span>
-                        </div>
-                        <p class="game-desc">A relaxing and charming country-life RPG. Farming, fishing, mining, and building relationships in the valley is the perfect way to unwind.</p>
-                        <div class="game-footer">
-                            <div class="game-metric">
-                                <span class="metric-label">Favorite Activity</span>
-                                <span class="metric-value">Farming & Foraging</span>
-                            </div>
-                            <div class="game-metric">
-                                <span class="metric-label">Farm Layout</span>
-                                <span class="metric-value">Forest Farm</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skyrim Special Edition -->
-                <div class="game-card card-skyrim">
-                    <div class="game-icon-bg">
-                        <i class="fas fa-dragon"></i>
-                    </div>
-                    <div class="game-card-content">
-                        <div class="game-header">
-                            <h3>Skyrim SE</h3>
-                            <span class="game-genre">Open World RPG</span>
-                        </div>
-                        <p class="game-desc">A classic that I keep coming back to. I've modded it to the ground to keep the graphics, combat, and roleplaying fresh.</p>
-                        <div class="game-footer">
-                            <div class="game-metric">
-                                <span class="metric-label">Active Mods</span>
-                                <span class="metric-value">500+ Stable Load Order</span>
-                            </div>
-                            <div class="game-metric">
-                                <span class="metric-label">Favorite Class</span>
-                                <span class="metric-value">Stealth Archer / Spellsword</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Roblox -->
-                <div class="game-card card-roblox">
-                    <div class="game-icon-bg">
-                        <i class="fab fa-roblox"></i>
-                    </div>
-                    <div class="game-card-content">
-                        <div class="game-header">
-                            <h3>Roblox</h3>
-                            <span class="game-genre">Sandbox / Creative</span>
-                        </div>
-                        <p class="game-desc">Not just a game platform, but a great place to play around with Luau scripting, build custom maps, and run through obbies with friends.</p>
-                        <div class="game-footer">
-                            <div class="game-metric">
-                                <span class="metric-label">Interests</span>
-                                <span class="metric-value">Luau Scripting & Obbies</span>
-                            </div>
-                            <div class="game-metric">
-                                <span class="metric-label">Role</span>
-                                <span class="metric-value">Creator & Gamer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-
-            <div class="social-links">
-                <a href="https://github.com/nez4rt" class="social-link" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://t.me/Nez4rt" class="social-link" target="_blank" aria-label="Telegram">
-                    <i class="fab fa-telegram"></i>
-                </a>
-                <a href="https://www.roblox.com/share?code=22fd7833ae80f74790ec0d9e07d7d381&type=Profile&source=ProfileShare&stamp=1779687339406" class="social-link" target="_blank" aria-label="Roblox">
-                    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M 4 4 L 20 4 L 20 20 L 4 20 Z M 9 9 L 9 15 L 15 15 L 15 9 Z" transform="rotate(-15 12 12)" />
-                    </svg>
-                </a>
-            </div>
-
-            <div class="copyright">
-                &copy; built with ❤️ + ☕ by Moch Nazwar
-            </div>
-        </div>
-    </footer>
-
-    <!-- JS -->
-    <script src="script.js"></script>
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
 </html>
