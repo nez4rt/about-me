@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Modern Personal Digital Identity Script — Nazwar
+  Modern Personal Digital Identity Script — Nazwar
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------------------------------------------------
-   1. Subtle Procedural Noise Canvas
+  1. Subtle Procedural Noise Canvas
    -------------------------------------------------------------------------- */
 function initNoiseCanvas() {
   const canvas = document.getElementById('noise-canvas');
@@ -47,7 +47,7 @@ function initNoiseCanvas() {
 }
 
 /* --------------------------------------------------------------------------
-   2. IntersectionObserver Scroll Reveal
+  2. IntersectionObserver Scroll Reveal
    -------------------------------------------------------------------------- */
 function initScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal');
@@ -71,7 +71,7 @@ function initScrollReveal() {
 }
 
 /* --------------------------------------------------------------------------
-   3. Active Section Navigation Highlighting
+  3. Active Section Navigation Highlighting
    -------------------------------------------------------------------------- */
 function initNavHighlighting() {
   const sections = document.querySelectorAll('section[id]');
@@ -98,8 +98,8 @@ function initNavHighlighting() {
   });
 }
 
-/* --------------------------------------------------------------------------
-   4. Live Clock (Indonesia Local Time Indicator - UTC+7)
+/*---------------------------------------------------------------------------
+  4. Live Clock (Indonesia Local Time Indicator - UTC+7)
    -------------------------------------------------------------------------- */
 function initLiveClock() {
   const clockEl = document.getElementById('live-clock');
@@ -122,7 +122,7 @@ function initLiveClock() {
 }
 
 /* --------------------------------------------------------------------------
-   5. Interactive Terminal CLI Simulation
+  5. Interactive Terminal CLI Simulation
    -------------------------------------------------------------------------- */
 function initInteractiveCLI() {
   const input = document.getElementById('cli-input');
@@ -216,7 +216,7 @@ Roblox   : https://www.roblox.com/users/nazwar_dev`
 }
 
 /* --------------------------------------------------------------------------
-   6. Mobile Navigation Toggle
+  6. Mobile Navigation Toggle
    -------------------------------------------------------------------------- */
 function initMobileMenu() {
   const toggle = document.querySelector('.mobile-menu-toggle');
@@ -236,7 +236,7 @@ function initMobileMenu() {
 }
 
 /* --------------------------------------------------------------------------
-   7. Subtle Ambient Glow Mouse Tracker
+  7. Subtle Ambient Glow Mouse Tracker
    -------------------------------------------------------------------------- */
 function initMouseGlow() {
   const glow = document.querySelector('.ambient-glow');
