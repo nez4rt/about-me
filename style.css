@@ -348,47 +348,56 @@ button {
   display: none;
   background: none;
   border: none;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   position: relative;
   cursor: pointer;
+  padding: 0;
 }
 
 .burger span {
   position: absolute;
-  left: 6px;
-  right: 6px;
+  left: 10px;
+  right: 10px;
   height: 1.5px;
   background: var(--ink);
   transition: transform var(--move) var(--ease-out), opacity var(--snap);
 }
 
-.burger span:first-child { top: 11px; }
-.burger span:last-child { bottom: 11px; }
+.burger span:first-child { top: 16px; }
+.burger span:last-child { bottom: 16px; }
 
 .burger.open span:first-child {
-  transform: translateY(4.5px) rotate(45deg);
+  transform: translateY(5.5px) rotate(45deg);
 }
 
 .burger.open span:last-child {
-  transform: translateY(-4.5px) rotate(-45deg);
+  transform: translateY(-5.5px) rotate(-45deg);
 }
 
 /* Mobile Menu Overlay */
 .mobile-drawer {
-  display: none;
   position: fixed;
   top: var(--hdr-height);
   left: 0;
   right: 0;
-  background: var(--paper-raised);
-  border-bottom: 1px solid var(--line);
-  padding: 1.5rem var(--gutter) 2rem;
+  background: rgba(18, 19, 22, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line-strong);
+  padding: 1.5rem var(--gutter) 2.2rem;
   z-index: 99;
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--move) var(--ease-out), transform var(--move) var(--ease-out);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
 }
 
 .mobile-drawer.open {
-  display: block;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .mobile-links {
@@ -1774,8 +1783,19 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   16. Media Queries & Responsive Adaptations
+   16. Media Queries & Mobile Optimizations
    -------------------------------------------------------------------------- */
+
+/* Touch targets & Mobile interaction helpers */
+button,
+a,
+input,
+.edition-tab,
+.term-chip {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 @media (max-width: 1180px) {
   .spine {
     display: none;
@@ -1787,47 +1807,289 @@ button {
   .status-badge {
     display: none;
   }
+
   .burger {
     display: block;
   }
+
   .hero-stage {
     grid-template-columns: 1fr;
     gap: var(--s5);
   }
+
   .edition-sheet {
-    order: -1;
+    order: 0; /* Keep narrative flow: Intro -> Vitals -> Sheet */
   }
+
   .hero-halo {
     display: none;
   }
+
   .identity-grid {
     grid-template-columns: 1fr;
+    gap: var(--s5);
   }
+
   .showroom-grid {
     grid-template-columns: 1fr;
   }
+
   .ftr-top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 1.25rem;
+    --s6: 2.5rem;
+    --s7: 3.5rem;
+  }
+
+  .section {
+    padding-block: var(--s6);
+  }
+
+  .section-title {
+    font-size: clamp(1.85rem, 6vw, 2.4rem);
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--hdr-height) + 1.25rem);
+    padding-bottom: var(--s5);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 8.5vw, 3.8rem);
+  }
+
+  .hero-motto {
+    gap: 0.25rem 0.5rem;
+  }
+
+  .hero-motto .motto-jp {
+    font-size: 0.95rem;
+  }
+
+  .hero-motto .motto-en {
+    font-size: 1.05rem;
+  }
+
+  .hero-ding {
+    display: none;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .connect-grid {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 580px) {
+  :root {
+    --gutter: 1rem;
+  }
+
+  .hdr-in {
+    column-gap: 0.75rem;
+  }
+
+  .brand-ver,
+  .brand-sep {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+  }
+
+  .github-pill {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  /* Hero Vitals 2x2 on mobile */
   .hero-vitals {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .vital {
+    padding: 0.65rem 0.75rem;
+  }
+
   .vital:nth-child(3) {
     border-left: none;
   }
+
   .vital:nth-child(n+3) {
     border-top: 1px solid var(--line);
   }
+
+  .vital-label {
+    font-size: 0.52rem;
+  }
+
+  .vital-value {
+    font-size: 0.72rem;
+  }
+
+  /* Hero CTA full-width buttons on mobile for easy thumb reach */
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Edition Sheet on mobile */
+  .edition-sheet {
+    padding: 1rem 0.85rem;
+  }
+
+  .edition-rail {
+    display: flex;
+    gap: 0.35rem;
+    padding-bottom: 0.65rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .edition-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .edition-tab {
+    flex: none;
+    font-size: 0.625rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .sheet-title {
+    font-size: 1.2rem;
+  }
+
+  .sheet-summary {
+    font-size: 0.78rem;
+  }
+
+  .spec-row {
+    font-size: 0.7rem;
+    padding-block: 0.4rem;
+  }
+
+  .spec-v {
+    max-width: 60%;
+    word-break: break-word;
+    text-align: right;
+  }
+
+  /* Identity Section */
+  .identity-bio-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .bio-lead {
+    font-size: 1.15rem;
+  }
+
+  .bio-text {
+    font-size: 0.8125rem;
+  }
+
+  .watermark-kanji {
+    font-size: clamp(6rem, 22vw, 9rem);
+    opacity: 0.02;
+  }
+
+  .spec-sheet-panel {
+    padding: 1rem 0.85rem;
+  }
+
+  .spec-mini-bento {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .mini-card {
+    padding: 0.75rem 0.85rem;
+  }
+
+  /* Terminal on mobile */
+  .term-body {
+    padding: 0.75rem;
+  }
+
+  .term-output {
+    max-height: 220px;
+    font-size: 0.7rem;
+  }
+
+  .term-chips {
+    gap: 0.35rem;
+  }
+
+  .term-chip {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.68rem;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Crucial iOS fix: 16px font-size prevents browser auto-zoom on input focus */
+  .term-input {
+    font-size: 16px;
+  }
+
+  /* Showroom on mobile */
+  .card-body {
+    padding: 1rem 0.85rem;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+  }
+
+  .card-desc {
+    font-size: 0.78rem;
+  }
+
+  /* Footer on mobile */
   .ftr-cols {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  .ftr-huge span {
+    font-size: clamp(3rem, 15vw, 6rem);
+    letter-spacing: 0.04em;
+  }
+
   .ftr-bottom {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
     text-align: center;
+    font-size: 0.625rem;
+  }
+
+  /* Toast Notice */
+  .toast-notice {
+    width: min(92vw, 340px);
+    font-size: 0.7rem;
+    padding: 0.55rem 0.95rem;
+    bottom: 1.25rem;
+    justify-content: center;
   }
 }

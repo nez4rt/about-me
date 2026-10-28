@@ -169,19 +169,6 @@ function initInteractiveDossier() {
         { k: "Color Palette", v: "Gruvbox / Amaterasu Void" },
         { k: "Startup Time", v: "18.4ms (72 plugins loaded)" }
       ]
-    },
-    hardware: {
-      badge: "Edition 04 // Hardware Rig",
-      title: "Engineering Workstation",
-      summary: "Desktop rig tuned for fast compiling, simulation tools (MATLAB / Multisim), system virtualization, and smooth gaming sessions.",
-      command: "lshw -short -sanitize | grep -E 'memory|processor|display'",
-      specs: [
-        { k: "Processor", v: "AMD Ryzen 5 High-Efficiency" },
-        { k: "Graphics", v: "Dedicated Vulkan GPU" },
-        { k: "Memory", v: "16GB Dual-Channel DDR4" },
-        { k: "Storage", v: "NVMe PCIe Gen4 M.2 SSD" },
-        { k: "Discipline", v: "Electrical Engineering" }
-      ]
     }
   };
 
@@ -435,7 +422,7 @@ low-level tuning, Wayland compositors, custom CLI utilities, and dotfiles craft.
 }
 
 /* --------------------------------------------------------------------------
-   8. Mobile Drawer Menu Toggle
+   8. Mobile Drawer Menu Toggle & Click Outside
    -------------------------------------------------------------------------- */
 function initMobileDrawer() {
   const burger = document.querySelector('.burger');
@@ -444,15 +431,32 @@ function initMobileDrawer() {
 
   if (!burger || !drawer) return;
 
-  burger.addEventListener('click', () => {
+  function closeDrawer() {
+    burger.classList.remove('open');
+    drawer.classList.remove('open');
+  }
+
+  burger.addEventListener('click', (e) => {
+    e.stopPropagation();
     burger.classList.toggle('open');
     drawer.classList.toggle('open');
   });
 
   links.forEach(link => {
-    link.addEventListener('click', () => {
-      burger.classList.remove('open');
-      drawer.classList.remove('open');
-    });
+    link.addEventListener('click', closeDrawer);
+  });
+
+  // Close when clicking outside of drawer
+  document.addEventListener('click', (e) => {
+    if (drawer.classList.contains('open') && !drawer.contains(e.target) && !burger.contains(e.target)) {
+      closeDrawer();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      closeDrawer();
+    }
   });
 }
