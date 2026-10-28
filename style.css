@@ -607,15 +607,26 @@ button {
 /* --------------------------------------------------------------------------
    6. Hero Section (.hero)
    -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   6. Hero Section (.hero)
+   -------------------------------------------------------------------------- */
 .hero {
   position: relative;
-  min-height: min(100vh, 920px);
-  display: flex;
-  align-items: center;
-  padding-top: calc(var(--hdr-height) + var(--s5));
+  min-height: auto;
+  padding-top: calc(var(--hdr-height) + 1.5rem);
   padding-bottom: var(--s6);
-  overflow: hidden;
   border-bottom: 1px solid var(--line);
+  width: 100%;
+  overflow: visible;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    padding-top: calc(var(--hdr-height) + var(--s5));
+  }
 }
 
 /* Technical Halo Rings & Crosshair Markings */
@@ -670,54 +681,64 @@ button {
 /* Hero Content Grid */
 .hero-stage {
   display: grid;
-  grid-template-columns: minmax(0, 560px) minmax(360px, 1fr);
-  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
   align-items: start;
   position: relative;
   z-index: 2;
   width: 100%;
+  max-width: 100%;
 }
 
 .hero-dossier {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-width: 0;
 }
 
 /* Eyebrow badge */
 .hero-eyebrow {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: var(--s4);
+  margin-bottom: var(--s3);
+  max-width: 100%;
 }
 
 .eyebrow-tag {
   font-family: var(--f-mono);
   font-size: 0.625rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--sun);
   background: var(--sun-dim);
   border: 1px solid rgba(229, 169, 60, 0.25);
-  padding: 0.24rem 0.65rem;
+  padding: 0.28rem 0.65rem;
   border-radius: var(--radius);
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.4;
 }
 
 .hero-title {
-  font-size: clamp(3.2rem, 7vw, 5.2rem);
+  font-size: clamp(2.4rem, 7vw, 4.8rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 0.95;
+  line-height: 1.02;
   color: var(--ink);
   margin-bottom: var(--s3);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-motto {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.4rem 0.8rem;
+  gap: 0.35rem 0.75rem;
   margin-bottom: var(--s4);
 }
 
@@ -726,6 +747,7 @@ button {
   color: var(--sun);
   font-size: 1.05rem;
   letter-spacing: 0.08em;
+  line-height: 1.4;
 }
 
 .hero-motto .motto-en {
@@ -733,14 +755,17 @@ button {
   font-style: italic;
   font-size: 1.15rem;
   color: var(--ink-dim);
+  line-height: 1.4;
 }
 
 .hero-lead {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--ink-dim);
   line-height: 1.7;
   max-width: 52ch;
-  margin-bottom: var(--s5);
+  margin-bottom: var(--s4);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Vitals Bar */
@@ -750,14 +775,18 @@ button {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--paper-raised);
-  margin-bottom: var(--s5);
+  margin-bottom: var(--s4);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .vital {
-  padding: 0.85rem 1rem;
+  padding: 0.75rem 0.85rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  min-width: 0;
 }
 
 .vital + .vital {
@@ -766,11 +795,12 @@ button {
 
 .vital-label {
   font-family: var(--f-sans);
-  font-size: 0.5625rem;
+  font-size: 0.58rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-muted);
+  white-space: nowrap;
 }
 
 .vital-value {
@@ -778,16 +808,18 @@ button {
   font-size: 0.78rem;
   font-weight: 500;
   color: var(--ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.35;
 }
 
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.85rem;
+  gap: 0.75rem;
   align-items: center;
+  width: 100%;
 }
 
 /* --------------------------------------------------------------------------
@@ -797,31 +829,37 @@ button {
   background: var(--paper-raised);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
-  padding: var(--s4);
+  padding: clamp(1rem, 3.5vw, 1.75rem);
   position: relative;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* Tab Switcher Rail */
 .edition-rail {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem;
   border-bottom: 1px solid var(--line);
   padding-bottom: var(--s3);
   margin-bottom: var(--s4);
-  overflow-x: auto;
+  width: 100%;
 }
 
 .edition-tab {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.45rem;
   padding: 0.4rem 0.75rem;
   font-family: var(--f-sans);
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-muted);
   border: 1px solid transparent;
@@ -830,6 +868,7 @@ button {
   cursor: pointer;
   transition: all var(--snap);
   white-space: nowrap;
+  flex: none;
 }
 
 .edition-tab:hover {
@@ -848,7 +887,9 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 0.75rem;
   margin-bottom: var(--s3);
+  width: 100%;
 }
 
 .sheet-badge {
@@ -861,14 +902,16 @@ button {
 }
 
 .sheet-title {
-  font-size: 1.45rem;
+  font-size: clamp(1.2rem, 3vw, 1.45rem);
   font-weight: 600;
   color: var(--ink);
+  word-break: break-word;
 }
 
 .sheet-icon-box {
   width: 36px;
   height: 36px;
+  flex-shrink: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   display: flex;
@@ -882,74 +925,26 @@ button {
   color: var(--ink-dim);
   line-height: 1.6;
   margin-bottom: var(--s4);
-}
-
-/* Sheet Copyable Command Block */
-.sheet-command-block {
-  margin-bottom: var(--s4);
-}
-
-.sheet-cmd-label {
-  font-family: var(--f-sans);
-  font-size: 0.58rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 0.35rem;
-}
-
-.sheet-command {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 0.75rem;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 0.65rem 0.85rem;
-  cursor: pointer;
-  text-align: left;
-  transition: border-color var(--snap);
-}
-
-.sheet-command:hover {
-  border-color: var(--line-strong);
-}
-
-.sheet-command code {
-  font-family: var(--f-mono);
-  font-size: 0.72rem;
-  color: var(--ink);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.sheet-command .copy-indicator {
-  font-family: var(--f-mono);
-  font-size: 0.625rem;
-  color: var(--sun);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
+  word-break: break-word;
 }
 
 /* Sheet Specifications Rows */
 .sheet-specs {
   border-top: 1px solid var(--line-soft);
   margin-top: var(--s3);
+  width: 100%;
 }
 
 .spec-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-block: 0.5rem;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding-block: 0.55rem;
   border-bottom: 1px solid var(--line-soft);
-  font-size: 0.75rem;
+  font-size: 0.76rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .spec-k {
@@ -958,12 +953,18 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.68rem;
+  flex-shrink: 0;
 }
 
 .spec-v {
   font-family: var(--f-mono);
   color: var(--ink);
   font-weight: 500;
+  text-align: right;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 65%;
 }
 
 /* --------------------------------------------------------------------------
@@ -1802,7 +1803,13 @@ input,
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 980px) {
+  :root {
+    --gutter: 1.25rem;
+    --s6: 2.5rem;
+    --s7: 3.5rem;
+  }
+
   .hdr-nav,
   .status-badge {
     display: none;
@@ -1812,39 +1819,101 @@ input,
     display: block;
   }
 
-  .hero-stage {
-    grid-template-columns: 1fr;
-    gap: var(--s5);
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--hdr-height) + 1.25rem);
+    padding-bottom: var(--s5);
+    overflow: visible;
   }
 
-  .edition-sheet {
-    order: 0; /* Keep narrative flow: Intro -> Vitals -> Sheet */
-  }
-
-  .hero-halo {
+  .hero-halo,
+  .hero-ding {
     display: none;
   }
 
-  .identity-grid {
-    grid-template-columns: 1fr;
-    gap: var(--s5);
+  .hero-stage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
   }
 
-  .showroom-grid {
-    grid-template-columns: 1fr;
+  .hero-dossier {
+    width: 100%;
+    max-width: 100%;
   }
 
-  .ftr-top {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+  .hero-title {
+    font-size: clamp(2.4rem, 8vw, 3.8rem);
+    line-height: 1.05;
   }
-}
 
-@media (max-width: 768px) {
-  :root {
-    --gutter: 1.25rem;
-    --s6: 2.5rem;
-    --s7: 3.5rem;
+  /* Vitals 2x2 on tablets and mobile */
+  .hero-vitals {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin-bottom: var(--s4);
+  }
+
+  .vital {
+    padding: 0.75rem 0.85rem;
+    min-width: 0;
+  }
+
+  .vital:nth-child(3) {
+    border-left: none;
+  }
+
+  .vital:nth-child(n+3) {
+    border-top: 1px solid var(--line);
+  }
+
+  .vital-value {
+    font-size: 0.78rem;
+    white-space: normal;
+    word-break: break-word;
+    overflow: visible;
+  }
+
+  /* Hero CTA full-width buttons so none are cut off */
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.78rem 1rem;
+    text-align: center;
+  }
+
+  /* Edition Sheet full-width & responsive */
+  .edition-sheet {
+    order: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 1.25rem 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Tabs wrap onto multiple items if needed so none are hidden offscreen */
+  .edition-rail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    width: 100%;
+    padding-bottom: 0.5rem;
+  }
+
+  .edition-tab {
+    flex: 1 1 auto;
+    justify-content: center;
+    text-align: center;
+    padding: 0.42rem 0.75rem;
+    font-size: 0.68rem;
   }
 
   .section {
@@ -1855,38 +1924,11 @@ input,
     font-size: clamp(1.85rem, 6vw, 2.4rem);
   }
 
-  .hero {
-    min-height: auto;
-    padding-top: calc(var(--hdr-height) + 1.25rem);
-    padding-bottom: var(--s5);
-  }
-
-  .hero-title {
-    font-size: clamp(2.5rem, 8.5vw, 3.8rem);
-  }
-
-  .hero-motto {
-    gap: 0.25rem 0.5rem;
-  }
-
-  .hero-motto .motto-jp {
-    font-size: 0.95rem;
-  }
-
-  .hero-motto .motto-en {
-    font-size: 1.05rem;
-  }
-
-  .hero-ding {
-    display: none;
-  }
-
-  .tools-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .connect-grid {
+  .identity-grid,
+  .showroom-grid,
+  .tools-grid,
+  .connect-grid,
+  .ftr-top {
     grid-template-columns: 1fr;
   }
 }
@@ -1914,21 +1956,46 @@ input,
     font-size: 0.6rem;
   }
 
-  /* Hero Vitals 2x2 on mobile */
-  .hero-vitals {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-eyebrow {
+    margin-bottom: 0.5rem;
   }
 
+  .eyebrow-tag {
+    font-size: 0.58rem;
+    line-height: 1.35;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 9.5vw, 3.2rem);
+  }
+
+  /* Hero motto stacks cleanly on small screens */
+  .hero-motto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-bottom: var(--s3);
+  }
+
+  .hero-motto .motto-jp {
+    font-size: 0.95rem;
+  }
+
+  .hero-motto .motto-en {
+    font-size: 1rem;
+  }
+
+  .hero-lead {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: var(--s4);
+  }
+
+  /* Vitals font sizes on mobile */
   .vital {
     padding: 0.65rem 0.75rem;
-  }
-
-  .vital:nth-child(3) {
-    border-left: none;
-  }
-
-  .vital:nth-child(n+3) {
-    border-top: 1px solid var(--line);
   }
 
   .vital-label {
@@ -1936,63 +2003,47 @@ input,
   }
 
   .vital-value {
-    font-size: 0.72rem;
+    font-size: 0.74rem;
   }
 
-  /* Hero CTA full-width buttons on mobile for easy thumb reach */
-  .hero-cta {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 0.65rem;
-  }
-
-  .hero-cta .btn {
-    width: 100%;
-    padding: 0.75rem 1rem;
-  }
-
-  /* Edition Sheet on mobile */
+  /* Edition sheet title and padding */
   .edition-sheet {
-    padding: 1rem 0.85rem;
-  }
-
-  .edition-rail {
-    display: flex;
-    gap: 0.35rem;
-    padding-bottom: 0.65rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .edition-rail::-webkit-scrollbar {
-    display: none;
-  }
-
-  .edition-tab {
-    flex: none;
-    font-size: 0.625rem;
-    padding: 0.35rem 0.65rem;
+    padding: 1.15rem 0.9rem;
   }
 
   .sheet-title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 
   .sheet-summary {
     font-size: 0.78rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
   }
 
+  /* CRITICAL: Stack spec rows on mobile so labels and values never clip! */
   .spec-row {
-    font-size: 0.7rem;
-    padding-block: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    padding-block: 0.45rem;
+    width: 100%;
+  }
+
+  .spec-k {
+    font-size: 0.625rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
   }
 
   .spec-v {
-    max-width: 60%;
+    font-size: 0.78rem;
+    color: var(--ink);
+    text-align: left;
+    max-width: 100%;
     word-break: break-word;
-    text-align: right;
+    overflow-wrap: break-word;
   }
 
   /* Identity Section */
@@ -2048,7 +2099,6 @@ input,
     align-items: center;
   }
 
-  /* Crucial iOS fix: 16px font-size prevents browser auto-zoom on input focus */
   .term-input {
     font-size: 16px;
   }
@@ -2091,5 +2141,16 @@ input,
     padding: 0.55rem 0.95rem;
     bottom: 1.25rem;
     justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-vitals {
+    grid-template-columns: 1fr;
+  }
+
+  .vital + .vital {
+    border-left: none;
+    border-top: 1px solid var(--line);
   }
 }
